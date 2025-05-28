@@ -8,19 +8,19 @@
 graph TB
     User[ユーザー] -->|HTTPS| CDN[Vercel CDN]
     CDN --> NextJS[Next.js Application]
-    
+
     NextJS --> |API Calls| MicroCMS[microCMS]
     NextJS --> |AI Generation| OpenAI[OpenAI API]
     NextJS --> |AI Generation| Claude[Claude API]
     NextJS --> |Local AI| Ollama[Ollama Local]
-    
+
     NextJS --> |Build Time| SSG[Static Site Generation]
     NextJS --> |Runtime| ISR[Incremental Static Regeneration]
-    
+
     Developer[開発者] --> |Push| GitHub[GitHub Repository]
     GitHub --> |Webhook| Vercel[Vercel Deployment]
     GitHub --> |CI/CD| Actions[GitHub Actions]
-    
+
     subgraph "Frontend Stack"
         NextJS
         React[React 19]
@@ -28,7 +28,7 @@ graph TB
         Tailwind[Tailwind CSS]
         ShadcnUI[shadcn/ui]
     end
-    
+
     subgraph "Testing & Quality"
         Jest[Jest]
         Storybook[Storybook]
@@ -46,10 +46,10 @@ sequenceDiagram
     participant CMS as microCMS
     participant AI as AI API
     participant Cache as Cache
-    
+
     User->>Next: ページリクエスト
     Next->>Cache: キャッシュ確認
-    
+
     alt キャッシュヒット
         Cache-->>Next: キャッシュされたデータ
     else キャッシュミス
@@ -57,9 +57,9 @@ sequenceDiagram
         CMS-->>Next: 記事データ
         Next->>Cache: データをキャッシュ
     end
-    
+
     Next-->>User: ページレスポンス
-    
+
     Note over User, AI: AI記事生成フロー
     User->>Next: AI生成リクエスト
     Next->>AI: テキスト生成
@@ -169,6 +169,7 @@ src/
 ```
 
 **状態管理戦略:**
+
 - **useContext + useReducer**: 複雑な状態変更
 - **useState**: シンプルな状態管理
 - **カスタムフック**: ロジックの再利用
@@ -338,7 +339,7 @@ VERCEL_ANALYTICS_ID=               # Vercel Analytics ID
 // 静的生成（SSG）
 export async function generateStaticParams() {
   const articles = await getArticles();
-  return articles.map((article) => ({
+  return articles.map(article => ({
     slug: article.slug,
   }));
 }
@@ -347,7 +348,7 @@ export async function generateStaticParams() {
 export const revalidate = 3600; // 1時間
 
 // クライアントサイドレンダリング（CSR）
-'use client';
+('use client');
 ```
 
 ### 6.2 キャッシュ戦略
@@ -482,13 +483,13 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-      
+
       - run: npm ci
       - run: npm run lint
       - run: npm run type-check
       - run: npm run test
       - run: npm run build
-      
+
       - name: Upload coverage
         uses: codecov/codecov-action@v3
 ```
