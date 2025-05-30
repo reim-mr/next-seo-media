@@ -1,0 +1,93 @@
+{
+  "name": "SEO Media - 技術情報メディア",
+  "short_name": "SEO Media",
+  "description": "フロントエンド開発、バックエンド技術、UI/UXデザインに関する最新情報をお届けする技術メディア",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "ja",
+  "dir": "ltr",
+  "categories": [
+    "education",
+    "productivity",
+    "technology"
+  ],
+  "shortcuts": [
+    {
+      "name": "記事一覧",
+      "short_name": "記事",
+      "description": "最新の記事一覧を表示",
+      "url": "/articles",
+      "icons": [
+        {
+          "src": "/icons/articles-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "記事検索",
+      "short_name": "検索",
+      "description": "記事を検索",
+      "url": "/search",
+      "icons": [
+        {
+          "src": "/icons/search-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "ホームページ（デスクトップ）"
+    },
+    {
+      "src": "/screenshots/mobile-home.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "ホームページ（モバイル）"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}
